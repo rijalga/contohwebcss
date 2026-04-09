@@ -1,0 +1,254 @@
+:root {
+    --toska: #2A9D8F;
+    --orange: #F4A261;
+    --orange-hover: #e76f51;
+    --putih: #FFFFFF;
+    --bg-light: #f4f7fc;
+    --text-dark: #1e2a3e;
+    --card-bg: #ffffff;
+    --shadow-sm: 0 20px 35px -12px rgba(0,0,0,0.1);
+    --transition: all 0.3s ease;
+}
+body {
+    background: var(--bg-light);
+    color: var(--text-dark);
+    font-family: 'Poppins', 'Segoe UI', system-ui, sans-serif;
+    transition: background 0.3s, color 0.2s;
+    padding-top: 80px;
+}
+body.dark-mode {
+    --bg-light: #121212;
+    --text-dark: #e0e0e0;
+    --card-bg: #1e1e2f;
+    background: #121212;
+    color: #e0e0e0;
+}
+body.dark-mode .navbar,
+body.dark-mode .hero-card {
+    background: #1e1e2f;
+    box-shadow: 0 8px 20px rgba(0,0,0,0.4);
+}
+.navbar {
+    background: var(--putih);
+    box-shadow: 0 2px 15px rgba(0,0,0,0.05);
+    transition: background 0.3s;
+}
+body.dark-mode .navbar { background: #1a1a2a; }
+.navbar-brand { font-weight: 700; color: var(--toska) !important; font-size: 1.5rem; }
+#darkModeToggle { border-color: var(--toska); color: var(--toska); }
+#darkModeToggle:hover { background: var(--toska); color: white; }
+.landing-section { min-height: 80vh; display: flex; align-items: center; justify-content: center; padding: 2rem; }
+.hero-card { background: var(--card-bg); border-radius: 2rem; padding: 3rem 2rem; box-shadow: var(--shadow-sm); transition: var(--transition); max-width: 900px; margin: 0 auto; }
+.btn-mulai { background: linear-gradient(135deg, var(--toska), var(--orange)); border: none; padding: 12px 32px; font-weight: 600; font-size: 1.2rem; color: white; border-radius: 40px; transition: transform 0.2s, box-shadow 0.2s; }
+.btn-mulai:hover { transform: translateY(-3px); box-shadow: 0 10px 20px rgba(0,0,0,0.2); color: white; }
+
+/* TRANSISI HALUS UNTUK DARK MODE */
+body,
+.navbar,
+.hero-card,
+.slide-card,
+.slide-effect-1, .slide-effect-2, .slide-effect-3, .slide-effect-4,
+.slide-effect-5, .slide-effect-6, .slide-effect-7, .slide-effect-8,
+.slide-effect-9, .slide-effect-10, .slide-effect-11, .slide-effect-12,
+.slide-effect-13, .slide-effect-14, .slide-effect-15, .slide-effect-16,
+.progress,
+footer,
+.btn-outline-repeat,
+.slide-indicator {
+    transition: background-color 0.9s ease-in-out,
+                color 0.5s ease-in-out,
+                box-shadow 0.5s ease-in-out,
+                border-color 0.4s ease-in-out,
+                backdrop-filter 0.4s ease-in-out !important;
+}
+
+/* SLIDE CARD */
+.slide-card {
+    background: var(--card-bg);
+    border-radius: 2rem;
+    padding: 2rem;
+    min-height: 380px;
+    display: flex;
+    align-items: center;
+    transition: all 0.5s cubic-bezier(0.2, 0.9, 0.4, 1.1);
+    box-shadow: var(--shadow-sm);
+}
+.slide-content { width: 100%; }
+.slide-item {
+    display: none;
+    animation: fadeSlideUp 0.5s ease forwards;
+}
+.slide-item.active { display: block; }
+@keyframes fadeSlideUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+.slide-paragraph { font-size: 1.3rem; line-height: 1.7; text-align: justify; margin-bottom: 0; }
+@media (max-width: 768px) { .slide-paragraph { font-size: 1rem; } .slide-card { padding: 1.5rem; } }
+
+/* ========== 16 EFEK UNIK PER SLIDE ========== */
+.slide-effect-1 { background: linear-gradient(135deg, #2A9D8F, #F4A261); color: white; text-shadow: 0 1px 2px rgba(0,0,0,0.2); }
+.slide-effect-2 { background: #e0e0e0; box-shadow: 12px 12px 24px #bebebe, -12px -12px 24px #ffffff; color: #1e2a3e; border-radius: 60px; }
+body.dark-mode .slide-effect-2 { background: #2a2a3a; box-shadow: 8px 8px 16px #15151f, -8px -8px 16px #2f2f43; color: #eee; }
+.slide-effect-3 { background: rgba(255,255,255,0.25); backdrop-filter: blur(12px); border: 1px solid rgba(255,255,255,0.3); border-radius: 40px; color: #1e2a3e; }
+body.dark-mode .slide-effect-3 { background: rgba(30,30,47,0.7); color: #f0f0f0; }
+.slide-effect-4 { background: #2c3e50; box-shadow: 0 0 20px #F4A261, 0 0 40px rgba(244,162,97,0.5); color: #fff; border-radius: 30px; }
+.slide-effect-5 { background: radial-gradient(circle at 10% 30%, #4facfe, #00f2fe); color: white; }
+.slide-effect-6 { background: repeating-linear-gradient(45deg, #f3f3f3 0px, #f3f3f3 20px, #e9e9e9 20px, #e9e9e9 40px); color: #2d3436; border-left: 10px solid var(--toska); }
+.slide-effect-7 { background: #f5f7fa; box-shadow: inset 0 0 10px rgba(0,0,0,0.05), 0 10px 20px rgba(0,0,0,0.1); border-radius: 20px; }
+
+/* SLIDE 8 - GRADIEN BERUBAH (ANIMASI) */
+.slide-effect-8 {
+    background: linear-gradient(112deg, #06beb6, #48b1bf);
+    color: #fff;
+    text-shadow: 0 0 5px rgba(0,0,0,0.3);
+    background-size: 200% 200%;
+    transition: all 0.5s ease;
+}
+/* Animasi gradien berjalan saat slide aktif */
+.slide-effect-8.active {
+    animation: gradienBerubah 3s infinite alternate ease-in-out;
+}
+@keyframes gradienBerubah {
+    0% {
+        background: linear-gradient(112deg, #ff6a00, #ee0979);
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+    }
+    25% {
+        background: linear-gradient(135deg, #f83600, #f9d423);
+        background-size: 200% 200%;
+        background-position: 50% 50%;
+    }
+    50% {
+        background: linear-gradient(90deg, #00c6fb, #005bea);
+        background-size: 200% 200%;
+        background-position: 100% 50%;
+    }
+    75% {
+        background: linear-gradient(45deg, #11998e, #38ef7d);
+        background-size: 200% 200%;
+        background-position: 50% 100%;
+    }
+    100% {
+        background: linear-gradient(160deg, #fc4a1a, #f7b733);
+        background-size: 200% 200%;
+        background-position: 0% 50%;
+    }
+}
+
+.slide-effect-9 { background: #d4a373; background-image: repeating-linear-gradient(90deg, #c28a5c 0px, #c28a5c 2px, #d4a373 2px, #d4a373 8px); color: #2d1b0e; }
+.slide-effect-10 { background: #1e272e; border-bottom: 6px solid var(--toska); color: #d2dae2; }
+.slide-effect-11 { background: linear-gradient(120deg, #f6d5f7, #fbe9d7); color: #4a4a4a; }
+.slide-effect-12 { background: #2c2c3a; position: relative; color: #fff; }
+.slide-effect-12::before { content: ""; position: absolute; top:0; left:0; width:100%; height:100%; background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.05"><filter id="noise"><feTurbulence type="fractalNoise" baseFrequency="0.65" numOctaves="3" stitchTiles="stitch"/></filter><rect width="100%" height="100%" filter="url(%23noise)"/></svg>'); pointer-events: none; border-radius: inherit; }
+.slide-effect-13 { background: #111; border: 3px solid transparent; border-image: linear-gradient(45deg, var(--toska), var(--orange)); border-image-slice: 1; color: #fff; }
+.slide-effect-14 { background: #e0f7fa; box-shadow: 0 20px 30px -10px rgba(0,0,0,0.2); color: #006064; }
+.slide-effect-15 { background: #0b0b1a; box-shadow: 0 0 12px #00ffcc; color: #ccfffc; }
+.slide-effect-16 { background: linear-gradient(90deg, #ff9a9e, #fad0c4, #fad0c4); color: #2c2c2c; }
+
+/* Penyesuaian dark mode */
+body.dark-mode .slide-effect-2,
+body.dark-mode .slide-effect-3,
+body.dark-mode .slide-effect-6,
+body.dark-mode .slide-effect-7,
+body.dark-mode .slide-effect-11,
+body.dark-mode .slide-effect-14 {
+    background: #2d2d3f;
+    color: #eee;
+    box-shadow: none;
+    border-color: var(--toska);
+}
+body.dark-mode .slide-effect-6 { background: #2d2d3f; border-left-color: var(--orange); }
+body.dark-mode .slide-effect-7 { background: #252535; }
+
+/* Navigasi & progress */
+.btn-nav { background: var(--toska); border: none; padding: 10px 24px; color: white; font-weight: 500; border-radius: 40px; transition: all 0.2s; }
+.btn-nav:hover:not(:disabled) { background: var(--orange-hover); transform: scale(1.02); }
+.btn-nav:disabled { opacity: 0.5; cursor: not-allowed; }
+.btn-outline-repeat { border: 2px solid var(--toska); background: transparent; color: var(--toska); border-radius: 40px; padding: 8px 20px; }
+.btn-outline-repeat:hover { background: var(--toska); color: white; }
+.slide-indicator { font-size: 1.2rem; font-weight: 500; background: rgba(42, 157, 143, 0.1); padding: 8px 20px; border-radius: 40px; backdrop-filter: blur(4px); }
+.progress { background-color: #e9ecef; border-radius: 20px; }
+.progress-bar { background: linear-gradient(90deg, var(--toska), var(--orange)); border-radius: 20px; transition: width 0.3s ease; }
+body.dark-mode .progress { background-color: #2c2c3a; }
+footer { background: transparent; border-top-color: rgba(0,0,0,0.1); }
+body.dark-mode footer { border-top-color: rgba(255,255,255,0.1); }
+
+/* Animasi joget */
+@keyframes joget {
+    0% { transform: translateX(0) rotate(0deg); }
+    25% { transform: translateX(5px) rotate(5deg); }
+    50% { transform: translateX(-5px) rotate(-5deg); }
+    75% { transform: translateX(3px) rotate(3deg); }
+    100% { transform: translateX(0) rotate(0deg); }
+}
+@keyframes bounceJoget {
+    0%, 100% { transform: translateY(0) rotate(0deg); }
+    50% { transform: translateY(-10px) rotate(10deg); }
+}
+
+/* Tombol rajin kirim tugas */
+.rajin-btn {
+    background: linear-gradient(45deg, #2A9D8F, #F4A261);
+    border: none;
+    padding: 12px 28px;
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: white;
+    border-radius: 50px;
+    cursor: pointer;
+    transition: transform 0.2s;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.2);
+    margin: 20px auto;
+    display: inline-block;
+}
+.rajin-btn:hover { transform: scale(1.05); }
+.rajin-btn:active { transform: scale(0.95); }
+
+/* Teks ambil uang */
+.ambil-uang {
+    display: none;
+    background: #ffd966;
+    color: #b45f06;
+    padding: 10px 20px;
+    border-radius: 30px;
+    font-weight: bold;
+    font-size: 1.3rem;
+    margin-top: 15px;
+    animation: munculBergoyang 0.5s ease-out;
+    box-shadow: 0 5px 10px rgba(0,0,0,0.1);
+    border: 2px solid #f39c12;
+}
+@keyframes munculBergoyang {
+    0% { opacity: 0; transform: scale(0.5) rotate(-10deg); }
+    50% { transform: scale(1.1) rotate(5deg); }
+    100% { opacity: 1; transform: scale(1) rotate(0deg); }
+}
+
+/* Logo 3D putar saat hover */
+.logo-3d {
+    width: 40px;
+    height: 40px;
+    margin-right: 10px;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+}
+
+.logo-3d:hover {
+    transform: rotateY(360deg);
+}
+
+/* Logo 3D lebih besar, tengah, dan putar saat hover */
+.logo-3d {
+    width: 80px;
+    height: 80px;
+    transition: transform 0.6s ease-in-out;
+    transform-style: preserve-3d;
+    display: block;
+}
+
+.logo-3d:hover {
+    transform: rotateY(360deg) scale(1.05);
+    filter: drop-shadow(0 0 8px var(--toska));
+}
